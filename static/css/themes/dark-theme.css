@@ -1,0 +1,203 @@
+/* Dark Theme CSS for iHelper.tech */
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-primary: #4a9eff;
+    --accent-secondary: #2d5f99;
+    --border-color: #404040;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --error-color: #f44336;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+.nav-menu {
+    background-color: var(--bg-secondary);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
+}
+
+/* Main Content */
+.content {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Navigation */
+.section-nav {
+    background-color: var(--bg-primary);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-nav li {
+    margin: 0.5rem 0;
+}
+
+.section-nav a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.section-nav a:hover {
+    background-color: var(--accent-secondary);
+    color: var(--text-primary);
+}
+
+/* Typography */
+h2, h3, h4 {
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+code {
+    background-color: var(--bg-primary);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+pre {
+    background-color: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+/* Links */
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Resources */
+.additional-resources {
+    background-color: var(--bg-primary);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.additional-resources h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.additional-resources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.additional-resources li {
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .section-nav {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .content {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}

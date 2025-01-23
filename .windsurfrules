@@ -1,0 +1,129 @@
+# Windsurf Rules for iHelper.tech
+# Last Updated: 2025-01-22 23:01 PST
+
+# Project Structure Rules
+[structure]
+root_dir = "c:/Users/ihelp/Knowledge_Library/iHelper.tech"
+build_dir = "build"
+docs_dir = "docs"
+static_dir = "static"
+templates_dir = "templates"
+tools_dir = "tools"
+
+# File Naming Conventions
+[naming]
+section_prefix = "\\d{2}_"
+section_pattern = "^\\d{2}_[A-Za-z_]+$"
+readme_name = "README.md"
+config_name = "section_config.json"
+template_ext = ".html"
+stylesheet_ext = ".css"
+script_ext = ".js"
+
+# Build Configuration
+[build]
+parallel_processing = true
+max_workers = 4
+clean_build = true
+validate_html = true
+optimize_images = true
+minify_css = true
+minify_html = true
+generate_sourcemaps = true
+
+# Content Rules
+[content]
+max_title_length = 60
+max_description_length = 160
+required_meta_fields = ["title", "description", "keywords"]
+allowed_html_tags = ["p", "h1", "h2", "h3", "h4", "ul", "ol", "li", "code", "pre", "blockquote"]
+image_max_width = 1200
+image_max_size = 500000  # 500KB
+
+# Security Rules
+[security]
+allowed_domains = ["ihelper.tech", "staging.ihelper.tech"]
+blocked_file_types = [".exe", ".dll", ".sh", ".bat"]
+max_file_size = 5000000  # 5MB
+require_content_hash = true
+validate_external_links = true
+
+# Development Rules
+[development]
+require_prettier = true
+prettier_config = ".prettierrc"
+eslint_config = ".eslintrc"
+python_version = "3.13"
+node_version = "20.x"
+use_typescript = true
+use_sass = true
+
+# Testing Rules
+[testing]
+require_tests = true
+min_coverage = 80
+test_dir = "tests"
+pytest_args = ["--verbose", "--cov"]
+
+# Documentation Rules
+[documentation]
+require_section_readme = true
+require_api_docs = true
+require_changelog = true
+update_timestamp = true
+doc_format = "markdown"
+
+# Deployment Rules
+[deployment]
+require_staging = true
+auto_deploy_branches = ["main"]
+require_review = true
+min_reviewers = 1
+allow_force_push = false
+
+# Cascade AI Assistant Rules
+[cascade]
+require_description = true
+auto_format = true
+suggest_improvements = true
+check_conventions = true
+
+# Git Rules
+[git]
+main_branch = "main"
+protected_branches = ["main", "staging"]
+require_signed_commits = true
+require_linear_history = true
+max_commit_size = 1000000  # 1MB
+
+# Environment Rules
+[environment]
+node_modules_dir = "node_modules"
+venv_dir = "venv"
+temp_dir = "tmp"
+cache_dir = ".cache"
+log_dir = "logs"
+
+# Ignore Rules
+[ignore]
+patterns = [
+    "*.pyc",
+    "__pycache__",
+    ".DS_Store",
+    "node_modules",
+    "venv",
+    "build",
+    "dist",
+    ".env",
+    ".env.*",
+    "*.log"
+]
+
+# Error Handling
+[errors]
+max_retries = 3
+fail_fast = true
+notify_on_error = true
+error_log = "error.log"
+
+

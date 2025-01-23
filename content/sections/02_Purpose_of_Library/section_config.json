@@ -1,0 +1,71 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Purpose of Library \ud83d\udcda",
+                "description": "This section provides comprehensive resources and guidance for purpose of library,",
+                "keywords": [
+                    "purpose",
+                    "of",
+                    "library",
+                    "\ud83d\udcda"
+                ],
+                "subtitle": "Essential Resources for Purpose of Library \ud83d\udcda",
+                "breadcrumb": "Purpose of Library \ud83d\udcda"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "02_Purpose_of_Library",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.017835",
+        "modified": "2025-01-23T06:34:40.017839",
+        "author": "iHelper.tech"
+    }
+}

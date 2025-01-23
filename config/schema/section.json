@@ -1,0 +1,127 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Section Configuration Schema",
+    "description": "Schema for iHelper.tech section configuration files",
+    "type": "object",
+    "required": ["version", "template", "build", "assets", "validation"],
+    "properties": {
+        "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Configuration version"
+        },
+        "template": {
+            "type": "object",
+            "required": ["slots"],
+            "properties": {
+                "slots": {
+                    "type": "object",
+                    "required": ["meta", "navigation", "content", "resources"],
+                    "properties": {
+                        "meta": {
+                            "type": "object",
+                            "required": ["title", "description", "keywords"],
+                            "properties": {
+                                "title": { "type": "string", "maxLength": 60 },
+                                "description": { "type": "string", "maxLength": 160 },
+                                "keywords": { 
+                                    "type": "array",
+                                    "items": { "type": "string" }
+                                },
+                                "author": { "type": "string" },
+                                "last_updated": { "type": "string" }
+                            }
+                        },
+                        "navigation": {
+                            "type": "object",
+                            "properties": {
+                                "parent": { "type": ["string", "null"] },
+                                "next": { "type": ["string", "null"] },
+                                "prev": { "type": ["string", "null"] },
+                                "children": {
+                                    "type": "array",
+                                    "items": { "type": "string" }
+                                }
+                            }
+                        },
+                        "content": {
+                            "type": "object",
+                            "required": ["source"],
+                            "properties": {
+                                "source": { "type": "string" },
+                                "toc": { "type": "boolean" },
+                                "code_highlighting": { "type": "boolean" }
+                            }
+                        },
+                        "resources": {
+                            "type": "object",
+                            "properties": {
+                                "related_sections": {
+                                    "type": "array",
+                                    "items": { "type": "string" }
+                                },
+                                "external_links": {
+                                    "type": "array",
+                                    "items": { "type": "string" }
+                                },
+                                "downloads": {
+                                    "type": "array",
+                                    "items": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "build": {
+            "type": "object",
+            "properties": {
+                "process_markdown": { "type": "boolean" },
+                "generate_toc": { "type": "boolean" },
+                "optimize_images": { "type": "boolean" },
+                "validate_links": { "type": "boolean" }
+            }
+        },
+        "assets": {
+            "type": "object",
+            "properties": {
+                "images": {
+                    "type": "object",
+                    "properties": {
+                        "directory": { "type": "string" },
+                        "optimize": { "type": "boolean" },
+                        "max_width": { "type": "integer" },
+                        "max_size": { "type": "integer" }
+                    }
+                },
+                "documents": {
+                    "type": "object",
+                    "properties": {
+                        "directory": { "type": "string" },
+                        "allowed_types": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        }
+                    }
+                }
+            }
+        },
+        "validation": {
+            "type": "object",
+            "required": ["required_fields", "max_title_length", "max_description_length", "allowed_html_tags"],
+            "properties": {
+                "required_fields": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                },
+                "max_title_length": { "type": "integer" },
+                "max_description_length": { "type": "integer" },
+                "allowed_html_tags": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            }
+        }
+    }
+}

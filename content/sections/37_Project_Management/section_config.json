@@ -1,0 +1,70 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Project Management Guide",
+                "description": "## Key Features",
+                "keywords": [
+                    "project",
+                    "management",
+                    "guide"
+                ],
+                "subtitle": "Essential Resources for Project Management Guide",
+                "breadcrumb": "Project Management Guide"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "37_Project_Management",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.112308",
+        "modified": "2025-01-23T06:34:40.112312",
+        "author": "iHelper.tech"
+    }
+}

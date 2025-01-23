@@ -1,0 +1,155 @@
+# GitHub Repository Configuration
+
+# Repository Settings
+repository:
+  name: iHelper.tech
+  description: "Professional Knowledge Library and Resource Center"
+  homepage: https://ihelper.tech
+  topics:
+    - knowledge-base
+    - documentation
+    - professional-development
+    - python
+    - cloudflare-pages
+  
+  # Feature Settings
+  has_issues: true
+  has_projects: true
+  has_wiki: true
+  has_downloads: true
+  
+  # Branch Protection
+  default_branch: main
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true
+  delete_branch_on_merge: true
+
+# Label Configuration
+labels:
+  - name: "bug"
+    color: "d73a4a"
+    description: "Something isn't working"
+  - name: "enhancement"
+    color: "a2eeef"
+    description: "New feature or request"
+  - name: "documentation"
+    color: "0075ca"
+    description: "Documentation improvements"
+  - name: "good first issue"
+    color: "7057ff"
+    description: "Good for newcomers"
+
+# Project Board Configuration
+project_board:
+  name: "iHelper.tech Development"
+  columns:
+    - name: "To Do"
+      automation:
+        events: ["opened", "reopened"]
+    - name: "In Progress"
+      automation:
+        events: ["assigned"]
+    - name: "Review"
+      automation:
+        events: ["ready_for_review"]
+    - name: "Done"
+      automation:
+        events: ["closed"]
+
+# Branch Protection Rules
+branch_protection:
+  main:
+    required_status_checks:
+      strict: true
+      contexts:
+        - "validate"
+        - "security"
+        - "build"
+    enforce_admins: true
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+    restrictions:
+      users: []
+      teams: ["maintainers"]
+  staging:
+    required_status_checks:
+      strict: true
+      contexts:
+        - "validate"
+        - "security"
+        - "build"
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+
+# Issue Templates
+issue_templates:
+  bug_report:
+    name: Bug Report
+    about: Create a report to help us improve
+    labels: bug
+    assignees: maintainers
+  feature_request:
+    name: Feature Request
+    about: Suggest an idea for this project
+    labels: enhancement
+    assignees: maintainers
+
+# Pull Request Template
+pull_request_template:
+  sections:
+    - title: Description
+      required: true
+    - title: Related Issue
+      required: true
+    - title: Type of Change
+      required: true
+      options:
+        - Bug fix
+        - New feature
+        - Documentation update
+        - Performance improvement
+    - title: Testing
+      required: true
+    - title: Checklist
+      required: true
+      items:
+        - Tests added/updated
+        - Documentation updated
+        - Code follows style guidelines
+        - All checks passing
+
+# Code Owners
+code_owners:
+  "*": "@senior-maintainers"
+  "docs/*": "@docs-team"
+  "tools/*": "@build-team"
+  "static/*": "@frontend-team"
+  "tests/*": "@qa-team"
+
+# Security Settings
+security:
+  vulnerability_alerts: true
+  automated_security_fixes: true
+  private_vulnerability_reporting: true
+
+# Dependency Settings
+dependency_updates:
+  package_manager: "pip"
+  directory: "/"
+  schedule:
+    interval: "weekly"
+  commit_message:
+    prefix: "deps"
+    include_scope: true
+
+# Workflow Settings
+workflow_settings:
+  actions:
+    allowed_actions: "all"
+  required_workflows:
+    - "CI/CD Pipeline"
+    - "Security Analysis"
+    - "Documentation Build"

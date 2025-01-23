@@ -1,0 +1,69 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Documentation Guide",
+                "description": "## Key Features",
+                "keywords": [
+                    "documentation",
+                    "guide"
+                ],
+                "subtitle": "Essential Resources for Documentation Guide",
+                "breadcrumb": "Documentation Guide"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "44_Documentation",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.135309",
+        "modified": "2025-01-23T06:34:40.135322",
+        "author": "iHelper.tech"
+    }
+}

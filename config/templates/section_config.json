@@ -1,0 +1,89 @@
+{
+    "version": "2.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "",
+                "description": "",
+                "keywords": [],
+                "author": "iHelper.tech",
+                "last_updated": "",
+                "subtitle": "",
+                "breadcrumb": ""
+            },
+            "navigation": {
+                "type": "auto",
+                "parent": null,
+                "next": null,
+                "prev": null,
+                "children": [],
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": ["markdown", "directives", "resources"],
+                "toc": true,
+                "code_highlighting": true
+            },
+            "resources": {
+                "include": ["*.md", "*.pdf", "*.ipynb"],
+                "exclude": ["README.md", "SEO.md"],
+                "related_sections": [],
+                "external_links": [],
+                "downloads": []
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": ["images", "css", "js"]
+        },
+        "validation": {
+            "required": ["README.md", "SEO.md"],
+            "schema": "standard",
+            "process_markdown": true,
+            "generate_toc": true,
+            "optimize_images": true,
+            "validate_links": true
+        }
+    },
+    "assets": {
+        "images": {
+            "directory": "content/assets/images",
+            "optimize": true,
+            "max_width": 1200,
+            "max_size": 500000
+        },
+        "documents": {
+            "directory": "content/assets/documents",
+            "allowed_types": [".pdf", ".doc", ".docx"]
+        }
+    },
+    "metadata": {
+        "section_id": "",
+        "category": "",
+        "tags": [],
+        "created": "",
+        "modified": "",
+        "author": "iHelper.tech"
+    },
+    "validation": {
+        "required_fields": [
+            "template.slots.meta.title",
+            "template.slots.meta.description",
+            "template.slots.meta.keywords"
+        ],
+        "max_title_length": 60,
+        "max_description_length": 160,
+        "allowed_html_tags": [
+            "p", "h1", "h2", "h3", "h4",
+            "ul", "ol", "li", "code", "pre",
+            "blockquote"
+        ]
+    }
+}

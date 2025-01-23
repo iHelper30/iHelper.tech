@@ -1,27 +1,46 @@
 # Python
 __pycache__/
 *.py[cod]
-*.class
+*.py.class
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.env
 venv/
-ENV/
-.venv
+.env
+.coverage
+.mypy_cache/
+
+# Build
+/build/
+/dist/
+*.egg-info/
+
+# Logs
+/logs/*
+!logs/.gitkeep
+
+# IDE
 .idea/
 .vscode/
+*.swp
+*.swo
+
+# Dependencies
+/node_modules/
+
+# Temporary files
+*.tmp
 *.bak
+*.backup
+.DS_Store
+
+# Local configuration
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.wrangler/
+
+# Build artifacts
+*.min.css
+*.min.js
+*.map

@@ -1,0 +1,70 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Personal Development Guide",
+                "description": "## Key Features",
+                "keywords": [
+                    "personal",
+                    "development",
+                    "guide"
+                ],
+                "subtitle": "Essential Resources for Personal Development Guide",
+                "breadcrumb": "Personal Development Guide"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "36_Personal_Development",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.112060",
+        "modified": "2025-01-23T06:34:40.112064",
+        "author": "iHelper.tech"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "build": {
+        "output_dir": "build",
+        "content_dir": "content/sections",
+        "assets_dir": "content/assets",
+        "static_dir": "static",
+        "template_dir": "config/templates",
+        "infrastructure_dir": "infrastructure/build",
+        "parallel_processing": true,
+        "max_workers": 4
+    },
+    "content": {
+        "validate_html": true,
+        "max_title_length": 60,
+        "max_description_length": 160,
+        "required_meta_fields": ["title", "description", "keywords"],
+        "allowed_html_tags": ["p", "h1", "h2", "h3", "h4", "ul", "ol", "li", "code", "pre", "blockquote"]
+    },
+    "assets": {
+        "optimize_images": true,
+        "image_max_width": 1200,
+        "image_max_size": 500000,
+        "minify_css": true,
+        "minify_html": true,
+        "generate_sourcemaps": true,
+        "css": {
+            "themes_dir": "static/css/themes",
+            "components_dir": "static/css/components",
+            "base_dir": "static/css/base"
+        },
+        "js": {
+            "core_dir": "static/js/core",
+            "components_dir": "static/js/components",
+            "utils_dir": "static/js/utils"
+        }
+    },
+    "deployment": {
+        "provider": "cloudflare",
+        "project": "ihelper-tech",
+        "environments": {
+            "production": {
+                "domain": "ihelper.tech",
+                "branch": "main"
+            },
+            "staging": {
+                "domain": "staging.ihelper.tech",
+                "branch": "staging"
+            }
+        }
+    },
+    "security": {
+        "allowed_domains": ["ihelper.tech", "staging.ihelper.tech"],
+        "blocked_file_types": [".exe", ".dll", ".sh", ".bat"],
+        "max_file_size": 5000000,
+        "require_content_hash": true,
+        "validate_external_links": true
+    },
+    "logging": {
+        "log_dir": "logs",
+        "build_log": "logs/build.log",
+        "error_log": "logs/error.log",
+        "access_log": "logs/access.log",
+        "level": "info"
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- META_SLOT: Replaced during build -->
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="keywords" content="{{ meta.keywords }}">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{{ meta.title }}">
+    <meta property="og:description" content="{{ meta.description }}">
+    <meta property="og:type" content="article">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/static/css/dark-theme.css" as="style">
+    
+    <title>{{ meta.title }} | Resource Library</title>
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ meta.title }}",
+        "description": "{{ meta.description }}",
+        "author": {
+            "@type": "Organization",
+            "name": "iHelper.tech"
+        }
+    }
+    </script>
+</head>
+<body class="dark-theme">
+    <header class="nav-menu">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a> / {{ meta.breadcrumb }}
+            </nav>
+            <h1>{{ meta.title }}</h1>
+            <p class="subtitle">{{ meta.subtitle }}</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="content card">
+            <!-- NAVIGATION_SLOT: Section navigation inserted here -->
+            {{ navigation }}
+            
+            <!-- CONTENT_SLOT: Main content inserted here -->
+            {{ content }}
+            
+            <!-- RESOURCES_SLOT: Additional resources inserted here -->
+            {{ resources }}
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 iHelper.tech. All rights reserved.</p>
+            <!-- FOOTER_SLOT: Additional footer content -->
+            {{ footer }}
+        </div>
+    </footer>
+</body>
+</html>

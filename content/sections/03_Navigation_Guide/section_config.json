@@ -1,0 +1,70 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Navigation Guide \ud83d\udcda",
+                "description": "This section provides comprehensive resources and guidance for navigation guide,",
+                "keywords": [
+                    "navigation",
+                    "guide",
+                    "\ud83d\udcda"
+                ],
+                "subtitle": "Essential Resources for Navigation Guide \ud83d\udcda",
+                "breadcrumb": "Navigation Guide \ud83d\udcda"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "03_Navigation_Guide",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.018009",
+        "modified": "2025-01-23T06:34:40.018013",
+        "author": "iHelper.tech"
+    }
+}

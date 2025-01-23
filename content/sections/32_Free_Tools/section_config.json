@@ -1,0 +1,70 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Free Tools \ud83d\udcda",
+                "description": "A comprehensive collection of resources and guides for Free Tools, designed to help you quickly understand and implement best practices.",
+                "keywords": [
+                    "free",
+                    "tools",
+                    "\ud83d\udcda"
+                ],
+                "subtitle": "Essential Resources for Free Tools \ud83d\udcda",
+                "breadcrumb": "Free Tools \ud83d\udcda"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "32_Free_Tools",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.106125",
+        "modified": "2025-01-23T06:34:40.106129",
+        "author": "iHelper.tech"
+    }
+}

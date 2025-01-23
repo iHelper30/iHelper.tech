@@ -1,0 +1,70 @@
+{
+    "version": "1.0.0",
+    "template": {
+        "type": "standard",
+        "slots": {
+            "meta": {
+                "title": "Monthly Updates \ud83d\udcda",
+                "description": "A comprehensive collection of resources and guides for Monthly Updates, designed to help you quickly understand and implement best practices.",
+                "keywords": [
+                    "monthly",
+                    "updates",
+                    "\ud83d\udcda"
+                ],
+                "subtitle": "Essential Resources for Monthly Updates \ud83d\udcda",
+                "breadcrumb": "Monthly Updates \ud83d\udcda"
+            },
+            "navigation": {
+                "type": "auto",
+                "sections": []
+            },
+            "content": {
+                "source": "README.md",
+                "processors": [
+                    "markdown",
+                    "directives",
+                    "resources"
+                ]
+            },
+            "resources": {
+                "include": [
+                    "*.md",
+                    "*.pdf",
+                    "*.ipynb"
+                ],
+                "exclude": [
+                    "README.md",
+                    "SEO.md"
+                ]
+            },
+            "footer": {
+                "type": "standard"
+            }
+        }
+    },
+    "build": {
+        "assets": {
+            "optimize": true,
+            "copy": [
+                "images",
+                "css",
+                "js"
+            ]
+        },
+        "validation": {
+            "required": [
+                "README.md",
+                "SEO.md"
+            ],
+            "schema": "standard"
+        }
+    },
+    "metadata": {
+        "section_id": "26_Monthly_Updates",
+        "category": "",
+        "tags": [],
+        "created": "2025-01-23T06:34:40.093588",
+        "modified": "2025-01-23T06:34:40.093593",
+        "author": "iHelper.tech"
+    }
+}
