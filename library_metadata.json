@@ -1,0 +1,21 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-01-22T20:30:00Z",
+    "entries": [
+        {
+            "id": "01_Welcome_Message",
+            "title": "Welcome Message",
+            "path": "01_Welcome_Message",
+            "type": "document",
+            "summary": "Welcome to the iHelper.tech Resource Library - Your complete guide to professional development resources.",
+            "tags": [
+                "welcome",
+                "message",
+                "introduction"
+            ],
+            "created": "2025-01-22T20:30:00Z",
+            "modified": "2025-01-22T20:30:00Z",
+            "author": "iHelper.tech"
+        }
+    ]
+}
