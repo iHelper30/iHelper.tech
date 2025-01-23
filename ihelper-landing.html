@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHelper: The AI That Prints Money While You Sleep</title>
+    <meta name="description" content="Warning: This AI automation will make your competitors obsolete. Guaranteed 10x productivity without lifting a finger.">
+    <meta name="keywords" content="AI money printer, business automation, revenue acceleration, zero-effort scaling">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --quantum-primary: #2BBBAD;
+            --quantum-secondary: #33b5e5;
+            --quantum-dark: #0a0a0a;
+            --quantum-accent: #FF6B6B;
+            --quantum-text: #f0f0f0;
+            --quantum-gradient: linear-gradient(135deg, #2BBBAD, #33b5e5);
+            --quantum-frame: rgba(43, 187, 173, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--quantum-dark);
+            color: var(--quantum-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        .quantum-frame {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            border: 10px solid var(--quantum-frame);
+            box-shadow: 0 0 50px rgba(43, 187, 173, 0.2);
+        }
+
+        .quantum-frame-top {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        .quantum-frame-bottom {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        .quantum-frame-left {
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 100%;
+        }
+
+        .quantum-frame-right {
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+        }
+
+        .quantum-logo {
+            position: fixed;
+            top: 30px;
+            left: 5vw;
+            z-index: 1000;
+            max-width: 150px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 10px 20px rgba(43, 187, 173, 0.3));
+        }
+
+        .quantum-logo:hover {
+            transform: scale(1.1) rotate(3deg);
+            filter: drop-shadow(0 15px 30px rgba(43, 187, 173, 0.5));
+        }
+
+        .quantum-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quantum-hero {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            background: radial-gradient(ellipse at bottom, rgba(43,187,173,0.1) 0%, rgba(26,159,159,0.05) 100%);
+            padding: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            transform: translateZ(50px);
+            padding-left: 5vw;
+        }
+
+        .hero-preheadline {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--quantum-accent);
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .hero-title {
+            font-size: 4.5vw;
+            font-weight: 800;
+            background: var(--quantum-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 20px rgba(43,187,173,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8vw;
+            color: rgba(240,240,240,0.85);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .quantum-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: var(--quantum-accent);
+            color: var(--quantum-dark);
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(255,107,107,0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quantum-cta:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 30px 60px rgba(255,107,107,0.5);
+        }
+
+        .quantum-cta::before {
+            content: '🚀';
+            position: absolute;
+            top: -100%;
+            left: 10px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .quantum-cta:hover::before {
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        .quantum-proof {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem 0;
+            background: rgba(43,187,173,0.05);
+        }
+
+        .proof-metric {
+            text-align: center;
+            background: rgba(43,187,173,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+        }
+
+        .proof-metric:hover {
+            transform: scale(1.05) translateZ(40px);
+            box-shadow: 0 15px 30px rgba(43,187,173,0.2);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--quantum-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .metric-description {
+            font-size: 1rem;
+            color: rgba(240,240,240,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .trust-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 4rem 0;
+            background: rgba(43,187,173,0.05);
+        }
+
+        .trust-badge {
+            max-height: 70px;
+            filter: grayscale(50%) opacity(0.7);
+            transition: all 0.4s ease;
+        }
+
+        .trust-badge:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 8vw;
+            }
+            .hero-subtitle {
+                font-size: 3.5vw;
+            }
+            .quantum-proof {
+                grid-template-columns: 1fr;
+            }
+            .hero-content {
+                padding-left: 3vw;
+            }
+            .quantum-logo {
+                left: 3vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="static/assets/images/iHelper_Logo.png" alt="iHelper Logo" class="quantum-logo">
+
+    <div class="quantum-frame quantum-frame-top"></div>
+    <div class="quantum-frame quantum-frame-bottom"></div>
+    <div class="quantum-frame quantum-frame-left"></div>
+    <div class="quantum-frame quantum-frame-right"></div>
+
+    <div class="quantum-container">
+        <section class="quantum-hero">
+            <div class="hero-content">
+                <p class="hero-preheadline">⚠️ Automation Disruption Alert</p>
+                <h1 class="hero-title">Your Business is Bleeding Money. AI Stops the Leak.</h1>
+                <p class="hero-subtitle">We don't just automate. We transform your business into a money-printing machine that works while you dream.</p>
+                
+                <a href="/free-audit" class="quantum-cta">
+                    Claim Your Money Printer
+                </a>
+            </div>
+        </section>
+
+        <section class="quantum-proof">
+            <div class="proof-metric">
+                <div class="metric-number floating-element">$72,345</div>
+                <div class="metric-description">Average Revenue Injection</div>
+            </div>
+            <div class="proof-metric">
+                <div class="metric-number floating-element">6.4x</div>
+                <div class="metric-description">ROI Acceleration</div>
+            </div>
+            <div class="proof-metric">
+                <div class="metric-number floating-element">92%</div>
+                <div class="metric-description">Client Transformation Rate</div>
+            </div>
+        </section>
+
+        <section class="trust-section">
+            <img src="static/assets/images/PayPal_Verified.png" alt="PayPal Verified" class="trust-badge">
+            <img src="static/assets/images/GDPR_Badge.png" alt="GDPR Compliant" class="trust-badge">
+            <img src="static/assets/images/secure-badge.png" alt="Secure Platform" class="trust-badge">
+        </section>
+    </div>
+
+    <script>
+        // Quantum Conversion Intelligence
+        document.querySelector('.quantum-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Implement advanced tracking and conversion logic
+            window.location.href = '/free-audit';
+        });
+    </script>
+</body>
+</html>
