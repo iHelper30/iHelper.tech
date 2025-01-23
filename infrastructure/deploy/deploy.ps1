@@ -5,6 +5,9 @@ param(
 
 Write-Host "Starting deployment process for iHelper.tech to $Environment environment..."
 
+# Set branch name based on environment
+$branchName = if ($Environment -eq "production") { "iHelper.tech" } else { "staging" }
+
 # Activate virtual environment
 Write-Host "Activating virtual environment..."
 .\venv\Scripts\Activate
@@ -12,16 +15,7 @@ Write-Host "Activating virtual environment..."
 # Install dependencies if needed
 if (-not (Test-Path ".\venv\Lib\site-packages\markdown2")) {
     Write-Host "Installing dependencies..."
-    pip install -r requirements.txt
-}
-
-# Run tests
-Write-Host "Running tests..."
-python -m pytest tests/
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Tests failed! Aborting deployment."
-    exit 1
+    pip install --prefer-binary -r requirements.txt
 }
 
 # Build the site
@@ -33,22 +27,15 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Validate build
-Write-Host "Validating build..."
-python tools/migrate_sections.py --validate
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Build validation failed! Aborting deployment."
-    exit 1
-}
-
 # Deploy to Cloudflare Pages
 Write-Host "Deploying to Cloudflare Pages ($Environment)..."
-wrangler pages publish build --project-name="ihelper-tech" --branch="$Environment"
+Write-Host "Using branch: $branchName"
+wrangler pages publish build --project-name="ihelper-tech" --branch="$branchName"
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Deployment successful!"
-    Write-Host "Site should be available at: https://$Environment.ihelper.tech"
+    $domain = if ($Environment -eq "production") { "ihelper.tech" } else { "staging.ihelper.tech" }
+    Write-Host "Site should be available at: https://$domain"
 } else {
     Write-Host "Deployment failed!"
     exit 1

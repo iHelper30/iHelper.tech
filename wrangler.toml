@@ -11,9 +11,11 @@ bucket = "./build"
 entry-point = "workers-site/index.js"
 
 [env.production]
-name = "ihelper-tech-prod"
+name = "ihelper-tech"
 route = "ihelper.tech/*"
+branch = "iHelper.tech"
 
 [env.staging]
 name = "ihelper-tech-staging"
 route = "staging.ihelper.tech/*"
+branch = "staging"
