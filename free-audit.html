@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free 30-Minute Business Automation Audit | iHelper</title>
+    <link rel="stylesheet" href="static/css/themes/dark-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2BBBAD;
+            --secondary-blue: #33b5e5;
+            --dark-bg: #1a1a1a;
+            --light-text: #e0e0e0;
+            --primary-font: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            font-family: var(--primary-font);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .new-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 1.5rem;
+        }
+
+        .headline {
+            font-size: 2.25rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subheadline {
+            font-size: 1.125rem;
+            text-align: center;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .audit-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: rgba(43, 187, 173, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(43, 187, 173, 0.2);
+        }
+
+        .email-input-wrapper, 
+        .name-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .email-input-wrapper .input-icon,
+        .name-input-wrapper .input-icon {
+            position: absolute;
+            left: 15px;
+            color: var(--primary-blue);
+            opacity: 0.7;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background-color: rgba(255,255,255,0.1);
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            color: var(--light-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(51, 181, 229, 0.2);
+        }
+
+        .conversion-guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(43, 187, 173, 0.1);
+            border: 1px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .conversion-guarantee strong {
+            color: var(--primary-blue);
+            margin-right: 0.5rem;
+        }
+
+        .business-challenge-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .business-challenge-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: rgba(43, 187, 173, 0.05);
+            border: 1px solid rgba(43, 187, 173, 0.2);
+            border-radius: 8px;
+            color: var(--light-text);
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .business-challenge-option:hover {
+            background-color: rgba(43, 187, 173, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .quick-start-automations {
+            background-color: rgba(43, 187, 173, 0.05);
+            border: 1px solid rgba(43, 187, 173, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-start-automations h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .quick-start-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .quick-start-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            background-color: rgba(43, 187, 173, 0.05);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 4px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .quick-start-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.5rem;
+            top: 1rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .quick-start-list li:hover::before {
+            transform: scale(1.1);
+        }
+
+        .quick-start-list li > strong:first-of-type {
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-start-list strong {
+            display: block;
+            color: var(--primary-blue);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-start-list li:hover {
+            background-color: rgba(43, 187, 173, 0.1);
+            transform: translateX(5px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .quick-start-list li:hover::before {
+            transform: scale(1.1);
+        }
+
+        .quick-start-list li.active {
+            background-color: rgba(43, 187, 173, 0.1);
+            border-left-color: var(--secondary-blue);
+            transform: none;
+        }
+
+        .challenge-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: rgba(43, 187, 173, 0.1);
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            color: var(--light-text);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: perspective(500px);
+            will-change: transform, box-shadow;
+        }
+
+        .challenge-button:hover {
+            background-color: rgba(43, 187, 173, 0.2);
+            transform: scale(1.05) rotateX(5deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .challenge-button .emoji {
+            font-size: 2rem;
+            margin-right: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .challenge-button:hover .emoji {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(43, 187, 173, 0.1);
+            border: 1px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .guarantee-badge span {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .content {
+            padding: 2rem 1rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-proof {
+            margin-top: 0.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .testimonial {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        .data-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .data-badge {
+            display: flex;
+            align-items: center;
+            background-color: rgba(43, 187, 173, 0.1);
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(43, 187, 173, 0.2);
+        }
+
+        .paypal-badge {
+            max-width: 100px;
+            height: auto;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .data-badge {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-badge span {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .data-badge img {
+            max-height: 30px;
+            margin-right: 0.5rem;
+        }
+
+        .official-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .gdpr-badge {
+            max-width: 100px;
+            height: auto;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 767px) {
+            .new-content {
+                padding: 1rem;
+            }
+
+            .quick-start-list {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .business-challenge-selection {
+                grid-template-columns: 1fr;
+            }
+
+            .challenge-selection {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .quick-start-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="new-content">
+        <img src="static/assets/images/iHelper_Logo.png" alt="iHelper Logo" class="logo">
+        
+        <h1 class="headline">Automate Your Business in 30 Minutes</h1>
+        
+        <div class="quick-start-automations">
+            <h3>Quick-Start Automations</h3>
+            <ul class="quick-start-list">
+                <li><strong>Revenue Accelerator:</strong> Smart campaigns that uncover hidden opportunities within your existing customer base. 
+                <strong>🚀 22% Additional Revenue</strong></li>
+                <li><strong>Loyalty Amplifier:</strong> Personalized touchpoints that transform casual customers into brand advocates. 
+                <strong>❤️ 27% Higher Retention</strong></li>
+                <li><strong>Reputation Booster:</strong> Automated strategies to showcase your best customer experiences. 
+                <strong>⏰ 45% More Positive Reviews</strong></li>
+                <li><strong>Booking Precision:</strong> Intelligent reminders that turn potential no-shows into confirmed appointments. 
+                <strong>💡 34% Less Missed Bookings</strong></li>
+            </ul>
+        </div>
+        
+        <form class="audit-form" id="auditForm">
+            <div class="name-input-wrapper">
+                <i class="input-icon">👋</i>
+                <input type="text" class="form-input" placeholder="Name" required>
+            </div>
+            <div class="email-input-wrapper">
+                <i class="input-icon">📧</i>
+                <input type="email" class="form-input" placeholder="Email" required>
+            </div>
+            
+            <div class="challenge-selection">
+                <button class="challenge-button" data-challenge="sales">
+                    <span class="emoji">🚀</span>
+                    <span>Boost My Sales!</span>
+                </button>
+                <button class="challenge-button" data-challenge="loyalty">
+                    <span class="emoji">❤️</span>
+                    <span>Unlock Customer Loyalty!</span>
+                </button>
+                <button class="challenge-button" data-challenge="efficiency">
+                    <span class="emoji">⏰</span>
+                    <span>Discover Hidden Sales</span>
+                </button>
+                <button class="challenge-button" data-challenge="revenue">
+                    <span class="emoji">💡</span>
+                    <span>Prevent Missed Opportunities</span>
+                </button>
+            </div>
+            
+            <button type="submit" class="cta-button">Claim My Free Solution</button>
+            <div class="conversion-guarantee">
+                <strong>14-Day Money-Back Guarantee</strong> - No Credit Card Required
+            </div>
+        </form>
+        
+        <div class="social-proof">
+            <p>✓ No Credit Card Required | ✓ Completely Confidential</p>
+        </div>
+        
+        <div class="privacy-section">
+            <p>Unsubscribe from our emails at any time by clicking the link at the bottom of every communication.</p>
+            <p>By submitting this form, you agree to our <a href="#" style="color: var(--primary-blue);">Terms of Service</a> and <a href="#" style="color: var(--primary-blue);">Privacy Policy</a>.</p>
+            <div class="data-badges">
+                <div class="data-badge">
+                    <img src="static/assets/images/GDPR_Badge.png" alt="GDPR Compliant" class="gdpr-badge">
+                    <span>GDPR Compliant</span>
+                </div>
+                <div class="data-badge">
+                    <img src="static/assets/images/PayPal_Verified.png" alt="PayPal Verified" class="paypal-badge">
+                    <span>PayPal Verified</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const auditForm = document.getElementById('auditForm');
+            const challengeButtons = document.querySelectorAll('.challenge-button');
+            const quickStartList = document.querySelector('.quick-start-list');
+            const listItems = quickStartList.querySelectorAll('li');
+
+            // Challenge Button Interaction
+            challengeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    challengeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    listItems.forEach(item => item.classList.remove('active'));
+
+                    switch(this.getAttribute('data-challenge')) {
+                        case "sales":
+                            listItems[3].classList.add('active');
+                            break;
+                        case "loyalty":
+                            listItems[1].classList.add('active');
+                            break;
+                        case "efficiency":
+                            listItems[2].classList.add('active');
+                            break;
+                        case "revenue":
+                            listItems[0].classList.add('active');
+                            break;
+                    }
+                });
+            });
+
+            // Advanced Form Submission
+            auditForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Collect Form Data
+                const formData = {
+                    name: auditForm.querySelector('input[type="text"]').value,
+                    email: auditForm.querySelector('input[type="email"]').value,
+                    selectedChallenge: document.querySelector('.challenge-button.active')?.getAttribute('data-challenge') || 'unspecified'
+                };
+
+                // Client-Side Validation
+                if (!formData.name || !formData.email) {
+                    alert('Please complete all required fields.');
+                    return;
+                }
+
+                // Simulated Server-Side Processing
+                try {
+                    // Hypothetical API Call (Replace with actual endpoint)
+                    fetch('/api/submit-audit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Conversion Tracking
+                        if (window.gtag) {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-CONVERSION_ID',
+                                'value': 1.0,
+                                'transaction_id': data.trackingId
+                            });
+                        }
+
+                        // Success Notification
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Solution Claimed!',
+                            text: `Thanks, ${formData.name}! We'll contact you at ${formData.email} within 24 hours to discuss your business challenges.`,
+                            confirmButtonText: 'Awesome!'
+                        });
+
+                        // Reset Form
+                        auditForm.reset();
+                    })
+                    .catch(error => {
+                        console.error('Submission Error:', error);
+                        alert('An error occurred. Please try again.');
+                    });
+                } catch (error) {
+                    console.error('Submission Error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
