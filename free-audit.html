@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free 30-Minute Business Automation Audit | iHelper</title>
+    <link rel="icon" type="image/png" href="static/assets/images/iHelper_Favicon.png">
     <link rel="stylesheet" href="static/css/themes/dark-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -61,100 +62,11 @@
             max-width: 500px;
         }
 
-        .audit-form {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            background-color: rgba(43, 187, 173, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(43, 187, 173, 0.2);
-        }
-
-        .email-input-wrapper, 
-        .name-input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .email-input-wrapper .input-icon,
-        .name-input-wrapper .input-icon {
-            position: absolute;
-            left: 15px;
-            color: var(--primary-blue);
-            opacity: 0.7;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            background-color: rgba(255,255,255,0.1);
-            border: 2px solid var(--primary-blue);
-            border-radius: 8px;
-            color: var(--light-text);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--secondary-blue);
-            box-shadow: 0 0 0 3px rgba(51, 181, 229, 0.2);
-        }
-
-        .conversion-guarantee {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(43, 187, 173, 0.1);
-            border: 1px solid var(--primary-blue);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .conversion-guarantee strong {
-            color: var(--primary-blue);
-            margin-right: 0.5rem;
-        }
-
-        .business-challenge-selection {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        .business-challenge-option {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background-color: rgba(43, 187, 173, 0.05);
-            border: 1px solid rgba(43, 187, 173, 0.2);
-            border-radius: 8px;
-            color: var(--light-text);
-            font-weight: 500;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .business-challenge-option:hover {
-            background-color: rgba(43, 187, 173, 0.1);
-            border-color: var(--primary-blue);
-        }
-
         .quick-start-automations {
             background-color: rgba(43, 187, 173, 0.05);
             border: 1px solid rgba(43, 187, 173, 0.2);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 2rem;
             margin-bottom: 1rem;
         }
 
@@ -438,6 +350,399 @@
                 gap: 1rem;
             }
         }
+
+        .engagement-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .engagement-overlay.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .engagement-modal {
+            background: #1e1e2f;  
+            color: #ffffff;  
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+            border: 2px solid #3498db;  
+        }
+        .engagement-modal.show {
+            transform: scale(1);
+        }
+        .engagement-modal h2 {
+            color: #3498db;  
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .engagement-modal p {
+            color: #b0b0c3;  
+            margin-bottom: 20px;
+        }
+        .continue-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .continue-button:hover {
+            background-color: #2980b9;
+        }
+        .contact-preview {
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .contact-preview h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .contact-preview ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-preview li {
+            margin: 12px 0;
+            font-size: 16px;
+            color: #b0b0c3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-preview li::before {
+            content: '•';
+            color: #3498db;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .contact-confirmation {
+            font-style: italic;
+            color: #b0b0c3;
+            margin-top: 15px;
+        }
+        .user-email {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .google-form-container {
+            position: relative;
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .google-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(
+                90deg, 
+                #3498db 0%, 
+                #2ecc71 50%, 
+                #e74c3c 100%
+            );
+            z-index: 10;
+        }
+
+        .form-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 40, 50, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            backdrop-filter: blur(10px);
+            opacity: 1;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .form-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        .form-input-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(45, 55, 72, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            background: #2ecc71;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(50,50,93,0.1);
+        }
+
+        .submit-button .btn-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            display: none;
+            animation: spin 1s linear infinite;
+        }
+
+        .submit-button.loading .btn-text {
+            opacity: 0;
+        }
+
+        .submit-button.loading .btn-spinner {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Enhanced Form Submission Container */
+        .form-submission-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(30, 40, 50, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .audit-form-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .audit-form-input:focus {
+            outline: none;
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+
+        .submit-audit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-audit-btn:hover {
+            background: #2ecc71;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(50,50,93,0.1);
+        }
+
+        .submit-audit-btn .btn-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            display: none;
+            animation: spin 1s linear infinite;
+        }
+
+        .submit-audit-btn.loading .btn-text {
+            opacity: 0;
+        }
+
+        .submit-audit-btn.loading .btn-spinner {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Enhanced Lead Capture Styling */
+        .lead-capture-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(30, 40, 50, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .lead-capture-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .lead-capture-header h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .lead-capture-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #3498db;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2ecc71;
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #2ecc71;
+        }
+
+        .submit-btn.loading .btn-text {
+            visibility: hidden;
+        }
+
+        .submit-btn .btn-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            display: none;
+            animation: spin 1s linear infinite;
+        }
+
+        .submit-btn.loading .btn-loader {
+            display: block;
+        }
+
+        .form-guarantee {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -460,40 +765,292 @@
             </ul>
         </div>
         
-        <form class="audit-form" id="auditForm">
-            <div class="name-input-wrapper">
-                <i class="input-icon">👋</i>
-                <input type="text" class="form-input" placeholder="Name" required>
+        <section class="free-audit-section" id="free-audit-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="free-audit-form-container">
+                            <div class="form-header">
+                                <h2>Get Your Free Business Audit</h2>
+                                <p>Unlock personalized insights to transform your business</p>
+                            </div>
+
+                            <form id="auditLeadForm" class="free-audit-form">
+                                <div class="form-group">
+                                    <label for="leadName">Full Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="leadName" 
+                                        name="name" 
+                                        class="form-control" 
+                                        placeholder="Enter your full name" 
+                                        required 
+                                        pattern="[A-Za-z\s]{2,50}"
+                                        title="2-50 letters only"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Please enter a valid name (2-50 letters)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="leadEmail">Business Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="leadEmail" 
+                                        name="email" 
+                                        class="form-control" 
+                                        placeholder="Enter your business email" 
+                                        required 
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        title="Valid business email required"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Please enter a valid business email
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="businessChallenge">Primary Business Challenge</label>
+                                    <select 
+                                        id="businessChallenge" 
+                                        name="challenge" 
+                                        class="form-control" 
+                                        required
+                                    >
+                                        <option value="">Select Your Primary Challenge</option>
+                                        <option value="sales">Boost Sales Performance</option>
+                                        <option value="efficiency">Improve Operational Efficiency</option>
+                                        <option value="marketing">Enhance Marketing Strategy</option>
+                                        <option value="retention">Customer Retention</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a business challenge
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button 
+                                        type="submit" 
+                                        class="btn btn-primary btn-block submit-btn"
+                                    >
+                                        <span class="btn-text">Claim My Solution</span>
+                                        <span class="btn-loader"></span>
+                                    </button>
+                                </div>
+
+                                <div class="form-footer">
+                                    <p class="text-muted">
+                                        🔒 100% Confidential | Instant Insights Delivery
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="email-input-wrapper">
-                <i class="input-icon">📧</i>
-                <input type="email" class="form-input" placeholder="Email" required>
+        </section>
+
+        <style>
+            /* Form Styling */
+            .free-audit-section {
+                background: rgba(30, 40, 50, 0.9);
+                padding: 60px 0;
+                color: #ffffff;
+            }
+
+            .free-audit-form-container {
+                background: rgba(45, 55, 72, 0.8);
+                border-radius: 12px;
+                padding: 30px;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+                backdrop-filter: blur(10px);
+            }
+
+            .form-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .form-header h2 {
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+
+            .form-header p {
+                color: rgba(255,255,255,0.7);
+            }
+
+            .free-audit-form .form-group {
+                margin-bottom: 20px;
+            }
+
+            .free-audit-form label {
+                color: rgba(255,255,255,0.8);
+                margin-bottom: 5px;
+            }
+
+            .form-control {
+                background: rgba(255,255,255,0.1);
+                border: 2px solid #3498db;
+                color: #ffffff;
+                transition: all 0.3s ease;
+            }
+
+            .form-control:focus {
+                background: rgba(255,255,255,0.2);
+                border-color: #2ecc71;
+                box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+            }
+
+            .submit-btn {
+                background: #3498db;
+                border: none;
+                padding: 12px;
+                font-size: 18px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .submit-btn:hover {
+                background: #2ecc71;
+                transform: translateY(-3px);
+            }
+
+            .submit-btn .btn-loader {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 24px;
+                height: 24px;
+                border: 3px solid rgba(255,255,255,0.3);
+                border-top: 3px solid white;
+                border-radius: 50%;
+                display: none;
+                animation: spin 1s linear infinite;
+            }
+
+            .submit-btn.loading .btn-text {
+                visibility: hidden;
+            }
+
+            .submit-btn.loading .btn-loader {
+                display: block;
+            }
+
+            .form-footer {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            @keyframes spin {
+                0% { transform: translate(-50%, -50%) rotate(0deg); }
+                100% { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+        </style>
+
+        <style>
+            /* Advanced Dark Mode Dropdown Styling */
+            .free-audit-form select.form-control {
+                /* Reset default browser styling */
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+
+                /* Dark theme background */
+                background-color: rgba(45, 55, 72, 0.8) !important;
+                background-image: 
+                    linear-gradient(45deg, transparent 50%, #ffffff 50%),
+                    linear-gradient(135deg, #ffffff 50%, transparent 50%);
+                background-position: 
+                    calc(100% - 20px) center,
+                    calc(100% - 15px) center;
+                background-size: 
+                    5px 5px,
+                    5px 5px;
+                background-repeat: no-repeat;
+
+                /* Text styling */
+                color: #ffffff !important;
+                border: 2px solid #3498db;
+                border-radius: 4px;
+                padding: 10px 35px 10px 15px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            /* Dropdown Options Styling */
+            .free-audit-form select.form-control option {
+                background-color: rgba(45, 55, 72, 0.9) !important;
+                color: #ffffff !important;
+                padding: 10px;
+            }
+
+            /* Hover and Focus States */
+            .free-audit-form select.form-control:hover,
+            .free-audit-form select.form-control:focus {
+                border-color: #2ecc71;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+            }
+
+            /* Placeholder Text Color */
+            .free-audit-form select.form-control::placeholder {
+                color: rgba(255, 255, 255, 0.6) !important;
+            }
+
+            /* Dropdown Arrow Customization */
+            .free-audit-form select.form-control::-ms-expand {
+                display: none; /* Remove default arrow in IE10 and IE11 */
+            }
+        </style>
+
+        <style>
+            /* Enhanced Dropdown Styling */
+            .form-control[type="text"],
+            .form-control[type="email"],
+            .form-control[type="select-one"] {
+                background: rgba(255,255,255,0.1);
+                border: 2px solid #3498db;
+                color: #ffffff;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: linear-gradient(45deg, transparent 50%, #ffffff 50%),
+                                  linear-gradient(135deg, #ffffff 50%, transparent 50%);
+                background-position: calc(100% - 20px) calc(1em + 2px),
+                                     calc(100% - 15px) calc(1em + 2px),
+                                     calc(100% - 2.5em) 0.5em;
+                background-size: 5px 5px,
+                                 5px 5px,
+                                 1px 1.5em;
+                background-repeat: no-repeat;
+            }
+
+            .form-control[type="select-one"] option {
+                background: rgba(45, 55, 72, 0.9);
+                color: #ffffff;
+            }
+
+            .form-control[type="select-one"]:focus {
+                outline: none;
+                border-color: #2ecc71;
+                box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+            }
+
+            /* Custom Dropdown Arrow */
+            .form-control[type="select-one"] {
+                padding-right: 30px;
+            }
+        </style>
+
+        <div class="google-form-container">
+            <div id="google-form-wrapper" class="google-form-wrapper">
+                <!-- Placeholder for dynamic form injection -->
             </div>
-            
-            <div class="challenge-selection">
-                <button class="challenge-button" data-challenge="sales">
-                    <span class="emoji">🚀</span>
-                    <span>Boost My Sales!</span>
-                </button>
-                <button class="challenge-button" data-challenge="loyalty">
-                    <span class="emoji">❤️</span>
-                    <span>Unlock Customer Loyalty!</span>
-                </button>
-                <button class="challenge-button" data-challenge="efficiency">
-                    <span class="emoji">⏰</span>
-                    <span>Discover Hidden Sales</span>
-                </button>
-                <button class="challenge-button" data-challenge="revenue">
-                    <span class="emoji">💡</span>
-                    <span>Prevent Missed Opportunities</span>
-                </button>
-            </div>
-            
-            <button type="submit" class="cta-button">Claim My Free Solution</button>
-            <div class="conversion-guarantee">
-                <strong>14-Day Money-Back Guarantee</strong> - No Credit Card Required
-            </div>
-        </form>
+        </div>
         
         <div class="social-proof">
             <p>✓ No Credit Card Required | ✓ Completely Confidential</p>
@@ -517,93 +1074,151 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const auditForm = document.getElementById('auditForm');
-            const challengeButtons = document.querySelectorAll('.challenge-button');
-            const quickStartList = document.querySelector('.quick-start-list');
-            const listItems = quickStartList.querySelectorAll('li');
-
-            // Challenge Button Interaction
-            challengeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    challengeButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    listItems.forEach(item => item.classList.remove('active'));
-
-                    switch(this.getAttribute('data-challenge')) {
-                        case "sales":
-                            listItems[3].classList.add('active');
-                            break;
-                        case "loyalty":
-                            listItems[1].classList.add('active');
-                            break;
-                        case "efficiency":
-                            listItems[2].classList.add('active');
-                            break;
-                        case "revenue":
-                            listItems[0].classList.add('active');
-                            break;
-                    }
-                });
-            });
-
-            // Advanced Form Submission
-            auditForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                // Collect Form Data
-                const formData = {
-                    name: auditForm.querySelector('input[type="text"]').value,
-                    email: auditForm.querySelector('input[type="email"]').value,
-                    selectedChallenge: document.querySelector('.challenge-button.active')?.getAttribute('data-challenge') || 'unspecified'
-                };
-
-                // Client-Side Validation
-                if (!formData.name || !formData.email) {
-                    alert('Please complete all required fields.');
-                    return;
+            class WebhookCapture {
+                constructor() {
+                    this.makeWebhookUrl = 'https://hook.us2.make.com/yk2ov9a6lmyirob73p3mx5vb7b1exhn2';
+                    this.initializeFormCapture();
                 }
 
-                // Simulated Server-Side Processing
-                try {
-                    // Hypothetical API Call (Replace with actual endpoint)
-                    fetch('/api/submit-audit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Conversion Tracking
-                        if (window.gtag) {
-                            gtag('event', 'conversion', {
-                                'send_to': 'AW-CONVERSION_ID',
-                                'value': 1.0,
-                                'transaction_id': data.trackingId
-                            });
-                        }
+                initializeFormCapture() {
+                    const form = document.getElementById('auditLeadForm');
+                    if (form) {
+                        form.addEventListener('submit', this.handleSubmission.bind(this));
+                        this.addFormValidation(form);
+                    }
+                }
 
-                        // Success Notification
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Solution Claimed!',
-                            text: `Thanks, ${formData.name}! We'll contact you at ${formData.email} within 24 hours to discuss your business challenges.`,
-                            confirmButtonText: 'Awesome!'
+                addFormValidation(form) {
+                    const inputs = form.querySelectorAll('input, select');
+                    inputs.forEach(input => {
+                        input.addEventListener('invalid', (e) => {
+                            e.preventDefault();
+                            input.classList.add('is-invalid');
                         });
 
-                        // Reset Form
-                        auditForm.reset();
-                    })
-                    .catch(error => {
-                        console.error('Submission Error:', error);
-                        alert('An error occurred. Please try again.');
+                        input.addEventListener('input', () => {
+                            input.classList.remove('is-invalid');
+                        });
                     });
-                } catch (error) {
-                    console.error('Submission Error:', error);
                 }
-            });
+
+                async handleSubmission(event) {
+                    event.preventDefault();
+                    const submitButton = event.target.querySelector('.submit-btn');
+                    
+                    // Validate form
+                    if (!event.target.checkValidity()) {
+                        event.target.classList.add('was-validated');
+                        return;
+                    }
+
+                    // Set loading state
+                    submitButton.classList.add('loading');
+                    
+                    // Capture form state
+                    const leadData = this.extractFormData();
+                    
+                    try {
+                        // Attempt webhook transmission
+                        await this.sendToMakeWebhook(leadData);
+                        this.handleSuccess(leadData, submitButton);
+                    } catch (error) {
+                        this.handleError(error, leadData, submitButton);
+                    }
+                }
+
+                extractFormData() {
+                    return {
+                        name: document.getElementById('leadName').value.trim(),
+                        email: document.getElementById('leadEmail').value.trim(),
+                        challenge: document.getElementById('businessChallenge').value,
+                        timestamp: new Date().toISOString(),
+                        source: 'iHelper Free Business Audit'
+                    };
+                }
+
+                async sendToMakeWebhook(payload) {
+                    const response = await fetch(this.makeWebhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Webhook transmission failed');
+                    }
+
+                    return response;
+                }
+
+                handleSuccess(leadData, submitButton) {
+                    // Local storage backup
+                    try {
+                        localStorage.setItem('lastLeadSubmission', JSON.stringify({
+                            ...leadData,
+                            submittedAt: new Date().toISOString()
+                        }));
+                    } catch {}
+
+                    // Remove loading state
+                    submitButton.classList.remove('loading');
+
+                    // Success Notification with Detailed Guidance
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Solution Kit Unlocked!',
+                        html: `
+                            <p>Thank you, ${leadData.name}! 🎉</p>
+                            <p>Your Quick-Start Automation Kit is on its way to <strong>${leadData.email}</strong>.</p>
+                            <p class="text-muted">Please check your inbox (and spam folder) within the next 5-10 minutes.</p>
+                        `,
+                        confirmButtonText: 'Got It!',
+                        confirmButtonColor: '#2ecc71',
+                        background: 'rgba(45, 55, 72, 0.9)',
+                        color: '#ffffff'
+                    });
+
+                    // Reset form
+                    document.getElementById('auditLeadForm').reset();
+                }
+
+                handleError(error, leadData, submitButton) {
+                    console.error('Webhook transmission error:', error);
+
+                    // Remove loading state
+                    submitButton.classList.remove('loading');
+
+                    // Persistent error logging
+                    try {
+                        const failedSubmissions = 
+                            JSON.parse(localStorage.getItem('failedSubmissions') || '[]');
+                        
+                        failedSubmissions.push({
+                            ...leadData,
+                            errorMessage: error.message,
+                            timestamp: new Date().toISOString()
+                        });
+
+                        localStorage.setItem('failedSubmissions', JSON.stringify(failedSubmissions));
+                    } catch {}
+
+                    // Error Notification
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Submission Encountered an Issue',
+                        text: 'Please try again or contact support.',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                }
+            }
+
+            // Initialize webhook capture
+            new WebhookCapture();
         });
     </script>
 </body>
